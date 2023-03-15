@@ -47,9 +47,9 @@ namespace ArraySums
             }
 
             // For every column of the matrix, it will sum every value
-            for (int j = 0; j < matrix.GetLength(0); j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                for (int i = 0; i < matrix.GetLength(1); i++)
+                for (int i = 0; i < matrix.GetLength(0); i++)
                 {
                     columnSum += matrix[i, j];
                 }
