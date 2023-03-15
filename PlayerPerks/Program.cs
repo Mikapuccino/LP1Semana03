@@ -35,6 +35,12 @@ namespace PlayerPerks
                 {
                     dCount += 1;
                 }
+
+                else
+                {
+                    Console.WriteLine("Unknown perk!");
+                    Environment.Exit(1);
+                }
             }
 
             // Initialize userPerks with every possible perk
@@ -63,7 +69,22 @@ namespace PlayerPerks
                 userPerks &= ~Perks.DoubleJump;
             }
 
+            // Writes active perks on console
             Console.WriteLine(userPerks);
+            
+            // If DoubleJump and Stealth perks are active,
+            // writes message on console
+            if (((userPerks & Perks.DoubleJump) == Perks.DoubleJump) & 
+            ((userPerks & Perks.Stealth) == Perks.Stealth))
+            {
+                Console.WriteLine("Silent jumper!");
+            }
+
+            // If AutoHeal perk is not active, writes message on console
+            if ((userPerks & Perks.AutoHeal) == Perks.AutoHeal)
+            {
+                Console.WriteLine("Not gonna make it!");
+            }
         }
     }
 }
