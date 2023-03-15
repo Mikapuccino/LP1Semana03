@@ -12,21 +12,23 @@ namespace ChangeString
 
             // Asks user for a character
             Console.WriteLine("Input a character: ");
-            char c = Console.ReadLine();
+            char c = char.Parse(Console.ReadLine());
 
-            string newS;
+            string newS = "";
 
             // Checks each character in string s
             foreach (char check in s)
             {
                 // If character is different than char c, adds the
                 // character to string newS
-                if (c =! check);
-                newS += c;
+                if (c != check)
+                {
+                    newS += check;
+                }
             }
 
             // Writes the new string without the character the user specified
-            console.WriteLine(newS);
+            Console.WriteLine(newS);
         }
     }
 }
