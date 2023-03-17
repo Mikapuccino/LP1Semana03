@@ -40,6 +40,40 @@ namespace PlayerAchievements
                     }
                 }
             }
+
+            // After adding achievements to all players, cycle repeats
+            // for each player
+            for (int player = 0; player < n; player++)
+            {
+                // If player has no achievements
+                if ((int) PlayerAchievements[player] == 0)
+                {
+                    Console.WriteLine($"Player {player + 1} " +
+                    "has no achievements");
+                }
+                
+                // If player has only 1 achievement
+                else if ((int) PlayerAchievements[player] == 1 | 
+                (int) PlayerAchievements[player] == 2 |
+                (int) PlayerAchievements[player] == 4)
+                {
+                    Console.WriteLine($"Player {player + 1} has the " +
+                    $"{PlayerAchievements[player]} achievement");
+                }
+                
+                // If player has multiple achievements
+                else
+                {
+                    Console.WriteLine($"Player {player + 1} has the " +
+                    $"{PlayerAchievements[player]} achievements");
+                }
+
+                // If player has all achievements
+                if ((int) PlayerAchievements[player] == 7)
+                {
+                    Console.WriteLine("Completionist!");
+                }
+            }
         }
     }
 }
