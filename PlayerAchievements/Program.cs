@@ -11,14 +11,19 @@ namespace PlayerAchievements
             int n = int.Parse(Console.ReadLine());
 
             // Array with n size, going to hold achievements of each player
-            int [] PlayerAchievements = new int[n];
+            Achievements [] PlayerAchievements = new Achievements[n];
 
             // Repeats cycle for each player
-            foreach (int player in PlayerAchievements)
+            for (int player = 0; player < n; player++)
             {
                 // Repeats cycle for each achievement
                 for (int achievement = 1; achievement <= 3; achievement++)
                 {
+                    // Achievement must equal 4 to get the last achievement
+                    if (achievement == 3)
+                    {
+                        achievement = 4;
+                    }
                     // Stores current achievement for later use
                     Achievements currentAchievement = (Achievements)achievement;
                     
